@@ -1,43 +1,47 @@
-//evelyn ernst
+//evelyn 
+
+//estados`
+int state = 0;
 
 void setup() {
   size(1800, 700);
+  
+  //llamada a clases
+  Menu = new MenuPrincipal();
+  Game = new Juego();
 
   //menu
-  menu = loadImage("back.png");
+  Menu.menu = loadImage("back.png");
   
-  inicio = loadImage("f.png");
+  Menu.inicio = loadImage("f.png");
 
   //botones
-  jugar = loadImage("start.png");
-  historia = loadImage("history.png");
-  control = loadImage("controls.png");
+  Menu.jugar = loadImage("start.png");
+  Menu.historia = loadImage("history.png");
+  Menu.control = loadImage("controls.png");
 
-  jugar1 = loadImage("start1.png");
-  historia1 = loadImage("history1.png");
-  control1 = loadImage("controls1.png");
+  Menu.jugar1 = loadImage("start1.png");
+  Menu.historia1 = loadImage("history1.png");
+  Menu.control1 = loadImage("controls1.png");
   
-  atras = loadImage("volver.png");
-  seguir = loadImage("seguir.png");
+  Menu.atras = loadImage("volver.png");
+  Menu.seguir = loadImage("seguir.png");
 
   //juego
-  fondo = loadImage("backg.jpg");
-  fondo2 = loadImage("backg2.jpg");
+  Game.fondo = loadImage("backg.jpg");
+  Game.fondo2 = loadImage("backg2.jpg");
 
   //personajes
-  Luffy = new personajes(loadImage("Luffy.png"), "Luffy");
-  Zoro = new personajes(loadImage("Zoro.png"), "Zoro");
-  Nami = new personajes(loadImage("Nami.png"), "Nami");
-  Usopp = new personajes(loadImage("Usopp.png"), "Usopp");
-  Sanji = new personajes(loadImage("Sanji.png"), "Sanji");
-  Chopper = new personajes(loadImage("Chopper.png"), "Chopper");
-  Robin = new personajes(loadImage("Robin.png"), "Robin");
-  Franky = new personajes(loadImage("Franky.png"), "Franky");
-  Brook = new personajes(loadImage("Brook.png"), "Brook");
+  Luffy = new Personaje(loadImage("Luffy.png"), "Luffy");
+  Zoro = new Personaje(loadImage("Zoro.png"), "Zoro");
+  Nami = new Personaje(loadImage("Nami.png"), "Nami");
+  Usopp = new Personaje(loadImage("Usopp.png"), "Usopp");
+  Sanji = new Personaje(loadImage("Sanji.png"), "Sanji");
+  Chopper = new Personaje(loadImage("Chopper.png"), "Chopper");
+  Robin = new Personaje(loadImage("Robin.png"), "Robin");
+  Franky = new Personaje(loadImage("Franky.png"), "Franky");
+  Brook = new Personaje(loadImage("Brook.png"), "Brook");
 
-  //llamada a clases
-  Menu = new menuPrincipal();
-  Game = new juego();
 }
 
 void draw() {

@@ -1,8 +1,22 @@
-menuPrincipal Menu;
+MenuPrincipal Menu;
 
-class menuPrincipal {
+class MenuPrincipal {
+  PImage menu;
+  PImage inicio;
+  
+  //botones
+  PImage jugar;
+  PImage historia;
+  PImage control;
 
-  menuPrincipal() {
+  PImage jugar1;
+  PImage historia1;
+  PImage control1;
+
+  PImage atras;
+  PImage seguir;
+
+  MenuPrincipal() {
   }
 
   void backpage() {
@@ -61,7 +75,7 @@ class menuPrincipal {
       }
     }
   }
-  
+
   void botonSeguir(int y) {
     imageMode(CORNER);
     image(seguir, 1645, 550, 80, 80);

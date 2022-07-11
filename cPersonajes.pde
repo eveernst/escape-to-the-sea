@@ -1,19 +1,19 @@
-personajes Luffy;
-personajes Zoro;
-personajes Nami;
-personajes Usopp;
-personajes Sanji;
-personajes Chopper;
-personajes Robin;
-personajes Franky;
-personajes Brook;
+Personaje Luffy;
+Personaje Zoro;
+Personaje Nami;
+Personaje Usopp;
+Personaje Sanji;
+Personaje Chopper;
+Personaje Robin;
+Personaje Franky;
+Personaje Brook;
 
-class personajes {
+class Personaje {
 
   PImage personaje;
   String nombre;
 
-  personajes(PImage P_personaje, String P_nombre) {
+  Personaje(PImage P_personaje, String P_nombre) {
     personaje = P_personaje;
     nombre = P_nombre;
   }
