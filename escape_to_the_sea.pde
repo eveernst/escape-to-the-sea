@@ -73,7 +73,7 @@ void draw() {
     Brook.jugador(1200, 600);
     bandera = false;
     }
-    Prota.boton(600, 650,100,300,Luffy,600,100);
+    Prota.boton(550, 650, 50, 200, Luffy, 600, 100);
   }
 
   //juego
