@@ -8,11 +8,15 @@ Personaje Robin;
 Personaje Franky;
 Personaje Brook;
 
+Personaje Prota;
+
 class Personaje {
 
   PImage personaje;
   String nombre;
 
+  Personaje(){}
+  
   Personaje(PImage P_personaje, String P_nombre) {
     personaje = P_personaje;
     nombre = P_nombre;
@@ -26,13 +30,9 @@ class Personaje {
     //selector de personaje
   }
 
-  void personajeSelector() {
-    //if (mouseX> && mouseX<width/2+150 && mouseY>195 && mouseY<310) {
-    //  image(personaje, width/2, 260, 300, 100);
-
-    //  if (mousePressed) {
-    //    state = 2;
-    //  }
-    //}
+  Personaje boton(int mx1, int mx2, int my1, int my2,Personaje p, int x, int y ) {
+    if (mouseX>mx1 && mouseX<mx2 && mouseY>my1 && mouseY<my2){ p.jugador(x, y);
+      if (mousePressed) state = 2;}
+   return p;
   }
 }

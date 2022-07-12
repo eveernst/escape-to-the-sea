@@ -5,7 +5,8 @@ int state = 0;
 
 void setup() {
   size(1800, 700);
-  
+  frameRate(60);
+
   //llamada a clases
   Menu = new MenuPrincipal();
   Game = new Juego();
@@ -41,11 +42,12 @@ void setup() {
   Robin = new Personaje(loadImage("Robin.png"), "Robin");
   Franky = new Personaje(loadImage("Franky.png"), "Franky");
   Brook = new Personaje(loadImage("Brook.png"), "Brook");
+  
+  Prota = new Personaje();
 
 }
 
 void draw() {
-  frameRate(200);
 
   //menu
   if (state == 0) {
@@ -54,10 +56,12 @@ void draw() {
 
   //personajes
   if (state == 1) {
+    boolean bandera = true;
     Menu.backpage();
     Menu.botonVolver(0);
 
-    //selector de personajes
+    //selector de personajes  
+    if(bandera){
     Luffy.jugador(600, 100);
     Zoro.jugador(900, 100);
     Nami.jugador(1200, 100);
@@ -67,6 +71,9 @@ void draw() {
     Robin.jugador(600, 600);
     Franky.jugador(900, 600);
     Brook.jugador(1200, 600);
+    bandera = false;
+    }
+    Prota.boton(600, 650,100,300,Luffy,600,100);
   }
 
   //juego
