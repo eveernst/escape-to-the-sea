@@ -15,8 +15,8 @@ class Juego {
 
     if (Fx1 <= -1800) Fx1 = 1800;
     if (Fx2 <= -1800) Fx2 = 1800;
-    Fx1 = Fx1 - 10;
-    Fx2 = Fx2 - 10;
+    Fx1 = Fx1 - 6;
+    Fx2 = Fx2 - 6;
 
     imageMode(CORNER);
     image(fondo, Fx1, 0, 1800, 900);

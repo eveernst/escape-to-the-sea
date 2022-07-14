@@ -1,11 +1,11 @@
 //evelyn 
 
-//estados`
+//estados
 int state = 0;
 
 void setup() {
-  size(1800, 700);
-  frameRate(60);
+  size(1800, 700, P2D);
+  frameRate(144);
 
   //llamada a clases
   Menu = new MenuPrincipal();
@@ -44,6 +44,7 @@ void setup() {
   Brook = new Personaje(loadImage("Brook.png"), "Brook");
   
   Prota = new Personaje();
+  jugador = new Jugador(Prota);
 
 }
 
@@ -62,18 +63,18 @@ void draw() {
 
     //selector de personajes  
     if(bandera){
-    Luffy.jugador(600, 100);
-    Zoro.jugador(900, 100);
-    Nami.jugador(1200, 100);
-    Usopp.jugador(600, 350);
-    Sanji.jugador(900, 350);
-    Chopper.jugador(1200, 350);
-    Robin.jugador(600, 600);
-    Franky.jugador(900, 600);
-    Brook.jugador(1200, 600);
+    Luffy.dibujar(600, 100, Luffy.imagen);
+    Zoro.dibujar(900, 100, Zoro.imagen);
+    Nami.dibujar(1200, 100, Nami.imagen);
+    Usopp.dibujar(600, 350, Usopp.imagen);
+    Sanji.dibujar(900, 350, Sanji.imagen);
+    Chopper.dibujar(1200, 350, Chopper.imagen);
+    Robin.dibujar(600, 600, Robin.imagen);
+    Franky.dibujar(900, 600, Franky.imagen);
+    Brook.dibujar(1200, 600, Brook.imagen);
     bandera = false;
     }
-    Prota.boton(550, 650, 50, 200, Luffy, 600, 100);
+    Prota.boton(550, 650, 50, 200, Luffy);
   }
 
   //juego
@@ -81,7 +82,9 @@ void draw() {
     Game.backpage();
     //enemigos
 
-    // nave
+    // protagonista
+    //jugador.saltar();
+    jugador.dibujar();
   }
 
   //historia
