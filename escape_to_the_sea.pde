@@ -5,7 +5,7 @@ int state = 0;
 
 void setup() {
   size(1800, 700, P2D);
-  frameRate(144);
+  frameRate(60);
 
   //llamada a clases
   Menu = new MenuPrincipal();
@@ -88,7 +88,7 @@ void draw() {
     //enemigos
 
     // protagonista
-    Game.move();
+    Game.movimientoAlien();
     Game.dibujar();
   }
 
@@ -107,4 +107,7 @@ void draw() {
 
   //if (state == 6) {
   //}
+}
+void keyPressed() {
+  if (keyCode == UP) Game.saltar();
 }

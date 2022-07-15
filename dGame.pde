@@ -6,8 +6,9 @@ class Juego {
   //juego
   PImage fondo, fondo2;
 
-  int jump = 5;
+  int jump = 0;
   int y = 500;
+  int x = 300;
 
   Juego() {
   }
@@ -25,17 +26,25 @@ class Juego {
     image(fondo, Fx1, 0, 1800, 900);
     image(fondo2, Fx2, 0, 1800, 900);
   }
-  void move() {
-    if (keyCode == 32) {
-      y = y - jump;
-      if (y <= 350) y += jump;
-      //if (jump == 15) jump = jump +  5;
+  void saltar() {
+    if (y==height-185){ jump=-25;
+    x = x+40; }
+
+  }
+  
+  void movimientoAlien() {
+   jump = jump + 1;
+    y = y + jump;
+    if (y >= height - 185) {
+      y = height - 185;
+      jump = 0;
+      x = 300;
     }
-    if (y < 450) y = 500;
+
   }
 
   void dibujar() {
     imageMode(CENTER);
-    image(player, 300, y, 200, 200);
+    image(player, x, y, 200, 200);
   }
 }
