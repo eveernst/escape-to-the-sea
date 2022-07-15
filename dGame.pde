@@ -2,17 +2,18 @@ Juego Game;
 
 class Juego {
   PImage player;
-
+  float x, y, d1;
   //juego
   PImage fondo, fondo2;
 
   int jump = 0;
-  int y = 500;
-  int x = 300;
+
 
   Juego() {
     y = 500;
     x = 300;
+
+    d1 = 200;
   }
 
   float Fx1 = 0, Fx2 = -1800;
@@ -31,8 +32,6 @@ class Juego {
   void saltar() {
     if (y == height - 185) {
       jump =- 25;
-    } else {
-      x = x + 40;
     }
   }
 
@@ -42,13 +41,11 @@ class Juego {
     if (y >= height - 185) {
       y = height - 185;
       jump = 0;
-    } else {
-      x = 300;
     }
   }
-
+  
   void dibujar() {
     imageMode(CENTER);
-    image(player, x, y, 200, 200);
+    image(player, x, y, d1, d1);
   }
 }
