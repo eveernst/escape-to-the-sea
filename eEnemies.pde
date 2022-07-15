@@ -14,8 +14,9 @@ class Enemigos {
   void move() {
     if (posx >= -50) {
       posx = posx - 10;
+    } else {
+      posx = 2000;
     }
-    posx = 2000;
   }
 
   void dibujar() {
@@ -23,8 +24,8 @@ class Enemigos {
     fill(0);
     ellipse(posx, posy, d2, d2);
   }
-    
-    void colision() {
+
+  void colision() {
     //d = dist(posx, posy, Game.x, Game.y);
     //if (d < d2/2 + Game.d1/2) {
     //  state = 5;
@@ -34,7 +35,7 @@ class Enemigos {
     //}
     if (!(posx > Game.x+Game.d1 || posy > Game.y+Game.d1 || Game.x > posx + d2
       || Game.y > posy + d2)) {
-        state = 5;
+      state = 5;
     } else {
       state = 1;
     }
