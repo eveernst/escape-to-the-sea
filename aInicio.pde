@@ -17,21 +17,21 @@ class MenuPrincipal {
     image(inicio, 0, 0, 1800, 700);
 
     //botones
-    imageMode(CENTER); image(jugar, width/2, 100, 400, 150); image(historia, width/2, 260, 300, 100); image(control, width/2, 400, 300, 100);
+    imageMode(CENTER); image(jugar, width/2, 260, 400, 150); image(historia, 300, 260, 300, 100); image(control, 1500, 260, 300, 100);
 
     //boton start
-    if (mouseX>width/2-200 && mouseX<width/2+200 && mouseY>25 && mouseY<160) {
-      image(jugar1, width/2, 100, 400, 150);
+    if (mouseX>width/2-200 && mouseX<width/2+200 && mouseY>195 && mouseY<310) {
+      image(jugar1, width/2, 260, 400, 150);
       if (mousePressed) state = 1;
     }
     //boton historia
-    if (mouseX>width/2-150 && mouseX<width/2+150 && mouseY>195 && mouseY<310) {
-      image(historia1, width/2, 260, 300, 100);
+    if (mouseX>300-150 && mouseX<300+150 && mouseY>195 && mouseY<310) {
+      image(historia1, 300, 260, 300, 100);
       if (mousePressed) state = 3;
     }
     //boton control
-    if (mouseX>width/2-150 && mouseX<width/2+150 && mouseY>340 && mouseY<450) {
-      image(control1, width/2, 400, 300, 100);
+    if (mouseX>1500-150 && mouseX<1500+150 && mouseY>195 && mouseY<310) {
+      image(control1, 1500, 260, 300, 100);
       if (mousePressed) state = 4;
     }
   }
