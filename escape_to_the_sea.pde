@@ -10,6 +10,8 @@ void setup() {
   //llamada a clases
   Menu = new MenuPrincipal();
   Game = new Juego();
+  
+  rival = new Enemigos();
 
   //menu
   Menu.menu = loadImage("back.png");
@@ -86,9 +88,11 @@ void draw() {
   if (state == 1 ) {
     Game.backpage();
     //enemigos
+    rival.move();
+    rival.dibujar();
 
     // protagonista
-    Game.movimientoAlien();
+    Game.movimiento();
     Game.dibujar();
   }
 
@@ -100,6 +104,8 @@ void draw() {
   //controles
   if (state == 4) {
     Menu.control();
+    Game.movimiento();
+    Game.dibujar();
   }
 
   //if (state == 5) {
@@ -107,7 +113,4 @@ void draw() {
 
   //if (state == 6) {
   //}
-}
-void keyPressed() {
-  if (keyCode == UP) Game.saltar();
 }

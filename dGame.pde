@@ -11,6 +11,8 @@ class Juego {
   int x = 300;
 
   Juego() {
+    y = 500;
+    x = 300;
   }
 
   float Fx1 = 0, Fx2 = -1800;
@@ -27,20 +29,22 @@ class Juego {
     image(fondo2, Fx2, 0, 1800, 900);
   }
   void saltar() {
-    if (y==height-185){ jump=-25;
-    x = x+40; }
-
+    if (y == height - 185) {
+      jump =- 25;
+    } else {
+      x = x + 40;
+    }
   }
-  
-  void movimientoAlien() {
-   jump = jump + 1;
+
+  void movimiento() {
+    jump = jump + 1;
     y = y + jump;
     if (y >= height - 185) {
       y = height - 185;
       jump = 0;
+    } else {
       x = 300;
     }
-
   }
 
   void dibujar() {
