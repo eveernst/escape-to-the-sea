@@ -10,8 +10,9 @@ void setup() {
   //llamada a clases
   Menu = new MenuPrincipal();
   Game = new Juego();
-
   rival = new Enemigos();
+  gameover = new Gameover();
+  puntos = new Score();
 
   //menu
   Menu.menu = loadImage("back.png");
@@ -35,17 +36,20 @@ void setup() {
   Game.fondo2 = loadImage("backg2.jpg");
 
   //gameover
-  gameover = new Gameover();
   gameover.Zzz = loadImage("X.png");
 
   //personaje prueba
   Game.player = loadImage("Luffy.png");
+  
+  //enemigo
+  rival.zoro = loadImage("Zoro.png");
 }
 
 void draw() {
 
   //menu
   if (state == 0) {
+    frameRate(60);
     Menu.homeScreen();
   }
 
@@ -60,6 +64,9 @@ void draw() {
     // protagonista
     Game.movimiento();
     Game.dibujar();
+    
+    //score
+    puntos.contador();
   }
 
   //historia
@@ -79,7 +86,4 @@ void draw() {
     gameover.fin();
     Menu.botonVolver(0);
   }
-
-  //if (state == 6) {
-  //}
 }

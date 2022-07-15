@@ -1,22 +1,35 @@
 Juego Game;
 
 class Juego {
+  
+  //jugador
   PImage player;
-  float x, y, d1;
+  float x, y, diam1;
+  
   //juego
   PImage fondo, fondo2;
-
-  int jump = 0;
+  float Fx1, Fx2;
+  
+  //salto
+  int jump;
+  
+  //vida
+  boolean vida;
 
 
   Juego() {
     y = 500;
     x = 300;
-
-    d1 = 200;
+    
+    diam1 = 150;
+    
+    Fx1 = 0;
+    Fx2 = -1800;
+    
+    jump = 0;
+    
+    vida = true; 
   }
-
-  float Fx1 = 0, Fx2 = -1800;
 
   void backpage() {
 
@@ -30,7 +43,7 @@ class Juego {
     image(fondo2, Fx2, 0, 1800, 900);
   }
   void saltar() {
-    if (y == height - 185) {
+    if (y == height - 200) {
       jump =- 25;
     }
   }
@@ -38,14 +51,14 @@ class Juego {
   void movimiento() {
     jump = jump + 1;
     y = y + jump;
-    if (y >= height - 185) {
-      y = height - 185;
+    if (y >= height - 200) {
+      y = height - 200;
       jump = 0;
     }
   }
   
   void dibujar() {
     imageMode(CENTER);
-    image(player, x, y, d1, d1);
+    image(player, x, y, diam1, diam1);
   }
 }

@@ -51,26 +51,25 @@ class MenuPrincipal {
     }
   }
 
-  void botonSeguir(int y) {
-    imageMode(CORNER);
-    image(seguir, 1645, 550, 80, 80);
+  //void botonSeguir(int y) {
+  //  imageMode(CORNER);
+  //  image(seguir, 1645, 550, 80, 80);
 
-    //boton seguir
-    if (mouseX>1645 && mouseX<1725 && mouseY>550 && mouseY<630) {
-      image(seguir, 1645, 550, 80, 80);
-      if (mousePressed) state = y;
-    }
-  }
+  //  //boton seguir
+  //  if (mouseX>1645 && mouseX<1725 && mouseY>550 && mouseY<630) {
+  //    image(seguir, 1645, 550, 80, 80);
+  //    if (mousePressed) state = y;
+  //  }
+  //}
 
   void historia() {
     Menu.backpage();
     Menu.botonVolver(0);
-    Menu.botonSeguir(1);
   }
 
   void control() {
     Menu.backpage();
     Menu.botonVolver(0);
-    Menu.botonSeguir(1);
+    //Menu.botonSeguir(1);
   }
 }
