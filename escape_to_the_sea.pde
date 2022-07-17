@@ -36,20 +36,21 @@ void setup() {
   Game.fondo2 = loadImage("backg2.jpg");
 
   //gameover
+  gameover.gOver = loadImage("0.gif");
   gameover.Zzz = loadImage("X.png");
 
   //personaje prueba
   Game.player = loadImage("Luffy.png");
   
   //enemigo
-  rival.zoro = loadImage("Zoro.png");
+  rival.marin = loadImage("marin.png");
+  rival.gaviota = loadImage("gaviota0.gif");
 }
 
 void draw() {
 
   //menu
   if (state == 0) {
-    frameRate(60);
     Menu.homeScreen();
   }
 
@@ -57,9 +58,10 @@ void draw() {
   if (state == 1 ) {
     Game.backpage();
     //enemigos
-    rival.move();    
-    rival.dibujar();
-    rival.colision();
+    rival.move(); 
+    //rival.moveEnemigo2();
+    rival.enemigo1();
+    rival.enemigo2();
 
     // protagonista
     Game.movimiento();
