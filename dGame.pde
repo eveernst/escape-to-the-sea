@@ -13,10 +13,6 @@ class Juego {
   //salto
   int jump;
   
-  //vida
-  boolean vida;
-
-
   Juego() {
     y = 500;
     x = 300;
@@ -26,9 +22,7 @@ class Juego {
     Fx1 = 0;
     Fx2 = -1800;
     
-    jump = 0;
-    
-    vida = true; 
+    jump = 0; 
   }
 
   void backpage() {

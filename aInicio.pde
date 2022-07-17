@@ -1,7 +1,7 @@
 MenuPrincipal Menu;
 
 class MenuPrincipal {
-  PImage menu, inicio, flecha,
+  PImage menu, inicio, flecha, h,
     //botones
     jugar, historia, control,
     jugar1, historia1, control1,
@@ -40,31 +40,34 @@ class MenuPrincipal {
     }
   }
 
-  void botonVolver(int x) {
+  void botonVolver() {
     imageMode(CORNER);
     image(atras, 75, 550, 80, 80);
 
     //boton atras
     if (mouseX>75 && mouseX<155 && mouseY>550 && mouseY<630) {
       image(atras, 75, 550, 80, 80);
-      if (mousePressed) state = x;
+      if (mousePressed) state = 0;
     }
   }
 
   void historia() {
     Menu.backpage();
-    Menu.botonVolver(0);
+    Menu.botonVolver();
+
+    imageMode(CENTER);
+    image(h, width/2 + 75, height/2, 1500, 500);
   }
 
   void control() {
     Menu.backpage();
-    Menu.botonVolver(0);
+    Menu.botonVolver();
 
     textMode(CORNER);
     fill(255);
     textSize(70);
     text("press 'up' arrow", width/2 + 25, height/2 - 25);
-    
+
     image(control, width/2 - 125, height/2 - 300);
     image(flecha, width/2, height/2, 500, 300);
   }

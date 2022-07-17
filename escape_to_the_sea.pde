@@ -30,9 +30,12 @@ void setup() {
 
   Menu.atras = loadImage("volver.png");
   Menu.seguir = loadImage("seguir.png");
-  
+
   //control
   Menu.flecha = loadImage("arrow.png");
+
+  //historia
+  Menu.h = loadImage("historia.png");
 
   //juego
   Game.fondo =  loadImage("backg.jpg");
@@ -44,7 +47,7 @@ void setup() {
 
   //personaje prueba
   Game.player = loadImage("Luffy.png");
-  
+
   //enemigo
   rival.marin = loadImage("marin.png");
   rival.gaviota = loadImage("gaviota0.gif");
@@ -55,21 +58,27 @@ void draw() {
   //menu
   if (state == 0) {
     Menu.homeScreen();
+    puntos.puntos = 0;
+    rival.px = 2000;
+    rival.posx = 2000;
+    rival.vel = 2;
   }
 
   //juego
   if (state == 1 ) {
     Game.backpage();
     //enemigos
-    rival.move(); 
+    rival.move();
     //rival.moveEnemigo2();
     rival.enemigo1();
     rival.enemigo2();
+    rival.enemigo3();
+
 
     // protagonista
     Game.movimiento();
     Game.dibujar();
-    
+
     //score
     puntos.contador();
   }
@@ -86,9 +95,9 @@ void draw() {
     Game.dibujar();
   }
 
+  //gameover
   if (state == 5) {
-    //gameover
     gameover.fin();
-    Menu.botonVolver(0);
+    gameover.highScore();
   }
 }
