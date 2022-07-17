@@ -1,7 +1,7 @@
 MenuPrincipal Menu;
 
 class MenuPrincipal {
-  PImage menu, inicio,
+  PImage menu, inicio, flecha,
     //botones
     jugar, historia, control,
     jugar1, historia1, control1,
@@ -51,17 +51,6 @@ class MenuPrincipal {
     }
   }
 
-  //void botonSeguir(int y) {
-  //  imageMode(CORNER);
-  //  image(seguir, 1645, 550, 80, 80);
-
-  //  //boton seguir
-  //  if (mouseX>1645 && mouseX<1725 && mouseY>550 && mouseY<630) {
-  //    image(seguir, 1645, 550, 80, 80);
-  //    if (mousePressed) state = y;
-  //  }
-  //}
-
   void historia() {
     Menu.backpage();
     Menu.botonVolver(0);
@@ -70,6 +59,13 @@ class MenuPrincipal {
   void control() {
     Menu.backpage();
     Menu.botonVolver(0);
-    //Menu.botonSeguir(1);
+
+    textMode(CORNER);
+    fill(255);
+    textSize(70);
+    text("press 'up' arrow", width/2 + 25, height/2 - 25);
+    
+    image(control, width/2 - 125, height/2 - 300);
+    image(flecha, width/2, height/2, 500, 300);
   }
 }

@@ -30,6 +30,9 @@ void setup() {
 
   Menu.atras = loadImage("volver.png");
   Menu.seguir = loadImage("seguir.png");
+  
+  //control
+  Menu.flecha = loadImage("arrow.png");
 
   //juego
   Game.fondo =  loadImage("backg.jpg");
