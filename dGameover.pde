@@ -20,7 +20,6 @@ class Gameover {
     Zzz.resize(1000, 150);
     image(Zzz, width/2, 100);
 
-    textMode(CENTER);
     fill(255);
     textSize(30);
     text("score: " + puntos.puntos, 400, 600);
